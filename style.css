@@ -1,9 +1,7 @@
-/* Скрываем все страницы по умолчанию */
 .page {
     display: none;
 }
 
-/* Показываем только активную страницу */
 .page.active {
     display: block;
 }
@@ -52,7 +50,7 @@
     margin: 0 3px;
 }
 
-/* Анимация для формы */
+
 #new-app-form {
     animation: fade 0.3s;
 }
