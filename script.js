@@ -1,7 +1,3 @@
-// ========================================
-// 1. ДАННЫЕ
-// ========================================
-
 // Три тестовые заявки
 let applications = [
     { course: 'Python для начинающих', date: '2026-07-10', payment: 'Наличными', status: 'Новая' },
@@ -9,10 +5,10 @@ let applications = [
     { course: 'Дизайн в Figma', date: '2026-09-15', payment: 'Наличными', status: 'Новая' }
 ];
 
-// Пользователи (хранятся в браузере)
+// Пользователи 
 let users = JSON.parse(localStorage.getItem('users'));
 
-// Если пользователей нет — создаём
+// Cjplfybt gjkmpjdfntkz
 if (!users || users.length === 0) {
     users = [
         { login: 'user123', password: '123456', fio: 'Иванов Иван', phone: '8(999)999-99-99', email: 'user@mail.ru' },
@@ -20,10 +16,6 @@ if (!users || users.length === 0) {
     ];
     localStorage.setItem('users', JSON.stringify(users));
 }
-
-// ========================================
-// 2. ФУНКЦИИ
-// ========================================
 
 // Переключение страниц
 function showPage(id) {
@@ -63,7 +55,7 @@ function renderApps() {
     container.innerHTML = html;
 }
 
-// Показать заявки в админке (с кнопками управления)
+// Показать заявки в админке 
 function renderAdmin() {
     var html = '';
     var container = document.getElementById('admin-list');
@@ -92,9 +84,7 @@ function renderAdmin() {
     container.innerHTML = html;
 }
 
-// ========================================
-// 3. ИЗМЕНЕНИЕ СТАТУСА (глобальная функция)
-// ========================================
+// 3. Изменение статусазаявки
 
 function changeStatus(index, newStatus) {
     if (index >= 0 && index < applications.length) {
@@ -108,9 +98,7 @@ function changeStatus(index, newStatus) {
     }
 }
 
-// ========================================
-// 4. РЕГИСТРАЦИЯ
-// ========================================
+// 4. Регистрация
 
 document.getElementById('btn-register').onclick = function() {
     var login = document.getElementById('reg-login').value.trim();
@@ -161,9 +149,7 @@ document.getElementById('btn-register').onclick = function() {
     showPage('page-login');
 };
 
-// ========================================
-// 5. ПЕРЕХОДЫ МЕЖДУ СТРАНИЦАМИ
-// ========================================
+// 5. переходы
 
 document.getElementById('goto-login').onclick = function(e) {
     e.preventDefault();
@@ -175,9 +161,8 @@ document.getElementById('goto-register').onclick = function(e) {
     showPage('page-register');
 };
 
-// ========================================
+
 // 6. ВХОД
-// ========================================
 
 document.getElementById('btn-login').onclick = function() {
     var login = document.getElementById('login-user').value.trim();
@@ -208,9 +193,8 @@ document.getElementById('btn-login').onclick = function() {
     renderApps();
 };
 
-// ========================================
+
 // 7. ВЫХОД
-// ========================================
 
 document.getElementById('btn-logout').onclick = function() {
     document.getElementById('login-user').value = '';
@@ -224,9 +208,7 @@ document.getElementById('btn-admin-logout').onclick = function() {
     showPage('page-login');
 };
 
-// ========================================
 // 8. НОВАЯ ЗАЯВКА
-// ========================================
 
 document.getElementById('btn-new-app').onclick = function() {
     var form = document.getElementById('new-app-form');
@@ -264,8 +246,5 @@ document.getElementById('btn-submit-app').onclick = function() {
     alert('Заявка отправлена');
 };
 
-// ========================================
-// 9. СТАРТ
-// ========================================
 
 showPage('page-login');
